@@ -1,7 +1,8 @@
-public class Professor extends Pessoa{
+public final class Professor extends Pessoa implements Remuneravel{
 
     private double salario, precoHora;
     private int horaTrabalhada;
+    public CARGO cargo;
 
     public Professor(){}
 
@@ -11,10 +12,6 @@ public class Professor extends Pessoa{
 
     public void setHoraTrabalhada(int horaTrabalhada){
         this.horaTrabalhada = horaTrabalhada;
-    }
-
-    public void calcularSalario(){
-        salario = horaTrabalhada*precoHora;
     }
 
     @Override
@@ -37,5 +34,15 @@ public class Professor extends Pessoa{
     @Override
     public void minhaAtividade(){
         System.out.println("Ensinar");
+    }
+
+    @Override
+    public void aplicarBonus() {
+
+    }
+
+    @Override
+    public void calcularSalario(){
+        salario = horaTrabalhada*precoHora;
     }
 }

@@ -43,6 +43,7 @@ public class Main {
                     p.setHoraTrabalhada(sc.nextInt());
                     break;
                 case 3:
+                    System.out.println("Cargo: " +CARGO.Coordenador);
                     System.out.println("Nome: " +co.getNome());
                     System.out.println("Idade: " +co.getIdade());
                     break;
@@ -55,6 +56,7 @@ public class Main {
                 case 5:
                     p.calcularSalario();
                     System.out.println("Informações do Professor");
+                    System.out.println("Cargo: " +CARGO.Professor);
                     System.out.println(p);
                     break;
                 case 6:

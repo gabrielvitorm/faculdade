@@ -1,4 +1,4 @@
-public class Disciplina {
+public final class Disciplina {
     private String nome, turno;
     private int cargaHoraria;
     private Aluno aluno;

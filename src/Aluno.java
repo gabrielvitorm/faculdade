@@ -1,4 +1,4 @@
-public class Aluno extends Pessoa {
+public final class Aluno extends Pessoa {
 
     String aprovacao;
     double media;
