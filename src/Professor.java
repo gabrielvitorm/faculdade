@@ -13,31 +13,29 @@ public class Professor extends Pessoa{
         this.horaTrabalhada = horaTrabalhada;
     }
 
-    public void setSalario(double salario){
-        this.salario = salario;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
     public void calcularSalario(){
         salario = horaTrabalhada*precoHora;
-    }
-
-    public void exibirDetalhesProfessor(){
-        System.out.printf("Matrícula: %d\nNome: %s\nIdade: %d\nSalário: R$%.2f\n",matricula, nome, idade, salario);
     }
 
     @Override
     public String toString() {
         return "Professor{" +
-                "salario=" + salario +
-                ", precoHora=" + precoHora +
-                ", horaTrabalhada=" + horaTrabalhada +
+                "Salario" + salario +
+                ", Preço da Horas" + precoHora +
+                ", Horas Trabalhadas" + horaTrabalhada +
                 ", nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", matricula=" + matricula +
                 '}';
+    }
+
+    @Override
+    public void quemSouEu(){
+        System.out.println("Sou Professor");
+    }
+
+    @Override
+    public void minhaAtividade(){
+        System.out.println("Ensinar");
     }
 }

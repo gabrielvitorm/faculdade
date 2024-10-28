@@ -10,20 +10,8 @@ public class Aluno extends Pessoa {
         this.nota1 = nota1;
     }
 
-    public double getNota1(){
-        return nota1;
-    }
-
-    public double getNota2() {
-        return nota2;
-    }
-
     public void setNota2(double nota2) {
         this.nota2 = nota2;
-    }
-
-    public double getNota3() {
-        return nota3;
     }
 
     public void setNota3(double nota3) {
@@ -44,10 +32,6 @@ public class Aluno extends Pessoa {
         }
     }
 
-    public void exibirDetalhesAluno(){
-        System.out.printf("Matrícula: %d\nAluno: %s\nIdade: %d\nNota 1: %.2f\nNota 2: %.2f\nNota 3: %.2f\nMéia: %.2f\nSituação: %s\n",matricula, nome, idade, nota1, nota2, nota3, media, aprovacao);
-    }
-
     @Override
     public String toString() {
         return "Aluno{" +
@@ -60,6 +44,14 @@ public class Aluno extends Pessoa {
                 ", idade=" + idade +
                 ", matricula=" + matricula +
                 '}';
+    }
+    @Override
+    public void quemSouEu() {
+        System.out.println("Sou o aluno");
+    }
+    @Override
+    public void minhaAtividade() {
+        System.out.println("Estudar");
     }
 }
 

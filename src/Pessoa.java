@@ -1,4 +1,4 @@
-public class Pessoa {
+public abstract class Pessoa {
 
     protected String nome;
     protected int idade, matricula;
@@ -11,10 +11,6 @@ public class Pessoa {
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
-    }
-
-    public int getMatricula(){
-        return matricula;
     }
 
     public void setNome(String nome){
@@ -33,10 +29,6 @@ public class Pessoa {
         return idade;
     }
 
-    public void exibirDados(){
-        System.out.println("Exibir Dados");
-    }
-
     @Override
     public String toString() {
         return "Pessoa{" +
@@ -45,4 +37,7 @@ public class Pessoa {
                 ", matricula=" + matricula +
                 '}';
     }
+
+    public abstract void quemSouEu();
+    public abstract void minhaAtividade();
 }

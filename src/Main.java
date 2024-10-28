@@ -7,12 +7,13 @@ public class Main {
         Aluno c = new Aluno();
         Professor p = new Professor();
         Coordenador co = new Coordenador("Marcelo", 45);
+        Disciplina d = new Disciplina();
 
         System.out.println("Programa de Gestão de Faculdade");
 
         int x,r;
         do {
-            System.out.println("Escolha uma das opções abaixo\n1 - Cadastrar Aluno\n2 - Cadastrar professor\n3 - Ver Cadastro Coordenador\n4 - Ver Cadastro do Aluno\n5 - Ver cadastro do Professor");
+            System.out.println("Escolha uma das opções abaixo\n1 - Cadastrar Aluno\n2 - Cadastrar professor\n3 - Ver Cadastro Coordenador\n4 - Ver Cadastro do Aluno\n5 - Ver cadastro do Professor\n6 - Cadastrar Disciplina\n7 - Ver dados da Disciplina");
             x = sc.nextInt();
             switch (x){
                 case 1:
@@ -48,11 +49,30 @@ public class Main {
                 case 4:
                     c.calcularMedia();
                     c.verificarAprovação();
-                    c.exibirDetalhesAluno();
+                    System.out.println("Informações do Aluno:");
+                    System.out.println(c);
                     break;
                 case 5:
                     p.calcularSalario();
-                    p.exibirDetalhesProfessor();
+                    System.out.println("Informações do Professor");
+                    System.out.println(p);
+                    break;
+                case 6:
+                    System.out.println("Digite o nome da disciplina:");
+                    d.setNome(sc.next());
+                    System.out.println("Digite o turno da disciplina:");
+                    d.setTurno(sc.next());
+                    System.out.println("Digite a carga horária da disciplina:");
+                    d.setCargaHoraria(sc.nextInt());
+                    d.ministrarDisciplina(p);
+                    d.cadastrarAluno(c);
+                    break;
+                case 7:
+                    System.out.println("Dados da disciplina:");
+                    c.calcularMedia();
+                    c.verificarAprovação();
+                    p.calcularSalario();
+                    System.out.println(d);
                     break;
                 default:
                     System.out.println("Opção Inválida!");
