@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Aluno c = new Aluno();
-        Professor p = new Professor();
-        Coordenador co = new Coordenador("Marcelo", 45);
+        Pessoa c = new Aluno();
+        Pessoa p = new Professor();
+        Pessoa co = new Coordenador("Marcelo", 45);
         Disciplina d = new Disciplina();
 
         System.out.println("Programa de Gestão de Faculdade");
@@ -24,11 +24,11 @@ public class Main {
                     System.out.println("Digite a idade do Aluno:");
                     c.setIdade(sc.nextInt());
                     System.out.println("Digite a 1° Nota");
-                    c.setNota1(sc.nextDouble());
+                    ((Aluno)c).setNota1(sc.nextDouble());
                     System.out.println("Digite a 2° Nota");
-                    c.setNota2(sc.nextDouble());
+                    ((Aluno)c).setNota2(sc.nextDouble());
                     System.out.println("Digite a 3° Nota");
-                    c.setNota3(sc.nextDouble());
+                    ((Aluno)c).setNota3(sc.nextDouble());
                     break;
                 case 2:
                     System.out.println("Digite o número de matrícula do professor:");
@@ -38,9 +38,9 @@ public class Main {
                     System.out.println("Digite a idade do Professor:");
                     p.setIdade(sc.nextInt());
                     System.out.println("Digite o preço da hora do professor:");
-                    p.setPrecoHora(sc.nextDouble());
+                    ((Professor)p).setPrecoHora(sc.nextDouble());
                     System.out.println("Digite a quantidade de horas trabalhadas:");
-                    p.setHoraTrabalhada(sc.nextInt());
+                    ((Professor)p).setHoraTrabalhada(sc.nextInt());
                     break;
                 case 3:
                     System.out.println("Cargo: " +CARGO.Coordenador);
@@ -48,13 +48,13 @@ public class Main {
                     System.out.println("Idade: " +co.getIdade());
                     break;
                 case 4:
-                    c.calcularMedia();
-                    c.verificarAprovação();
+                    ((Aluno)c).calcularMedia();
+                    ((Aluno)c).verificarAprovação();
                     System.out.println("Informações do Aluno:");
                     System.out.println(c);
                     break;
                 case 5:
-                    p.calcularSalario();
+                    ((Professor)p).calcularSalario();
                     System.out.println("Informações do Professor");
                     System.out.println("Cargo: " +CARGO.Professor);
                     System.out.println(p);
@@ -66,14 +66,14 @@ public class Main {
                     d.setTurno(sc.next());
                     System.out.println("Digite a carga horária da disciplina:");
                     d.setCargaHoraria(sc.nextInt());
-                    d.ministrarDisciplina(p);
-                    d.cadastrarAluno(c);
+                    d.ministrarDisciplina(((Professor)p));
+                    d.cadastrarAluno(((Aluno)c));
                     break;
                 case 7:
                     System.out.println("Dados da disciplina:");
-                    c.calcularMedia();
-                    c.verificarAprovação();
-                    p.calcularSalario();
+                    ((Aluno)c).calcularMedia();
+                    ((Aluno)c).verificarAprovação();
+                    ((Professor)p).calcularSalario();
                     System.out.println(d);
                     break;
                 default:
